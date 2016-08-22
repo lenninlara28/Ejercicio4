@@ -5,6 +5,8 @@
  */
 package Interfaz;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author hp 14
@@ -56,6 +58,11 @@ public class Principal extends javax.swing.JFrame {
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, -1));
 
         txtMetros.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        txtMetros.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtMetrosKeyTyped(evt);
+            }
+        });
         jPanel1.add(txtMetros, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 70, 240, -1));
 
         cmbHacer.setBackground(new java.awt.Color(0, 0, 0));
@@ -109,10 +116,16 @@ public class Principal extends javax.swing.JFrame {
     private void cmbHacerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbHacerActionPerformed
         String cuotaini,montoT,qotas;
         int total,metros,primecuota,cuotas;
+        if(txtMetros.getText().trim().isEmpty()){
+         JOptionPane.showMessageDialog(this,"Digite Cuantos Metros Cubicos Comprara","error", JOptionPane.ERROR_MESSAGE);
+         txtMetros.requestFocusInWindow();}
+         
+        else{
+        
         metros=Integer.parseInt(txtMetros.getText());
         total=80000*metros;
         cuotas=((total*65)/100)/12;
-        
+       
         montoT=String.valueOf(total);
         txtMontoTotal.setText(montoT);
 
@@ -122,8 +135,17 @@ public class Principal extends javax.swing.JFrame {
 
         qotas=String.valueOf(cuotas);
         txtCuota2.setText("$"+qotas);
-
+        
+        }
     }//GEN-LAST:event_cmbHacerActionPerformed
+
+    private void txtMetrosKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtMetrosKeyTyped
+       char c=evt.getKeyChar(); 
+         
+          if(Character.isLetter(c)) { 
+              getToolkit().beep(); 
+              evt.consume();}
+    }//GEN-LAST:event_txtMetrosKeyTyped
 
     /**
      * @param args the command line arguments
