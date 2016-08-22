@@ -27,21 +27,85 @@ public class Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        txtMetros = new javax.swing.JTextField();
+        cmdHacer = new javax.swing.JButton();
+        cmdCuotas = new javax.swing.JComboBox<>();
+        txtCuotas = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        txtMontoTotal = new javax.swing.JTextField();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 3, 24)); // NOI18N
+        jLabel1.setText("Tienda Inmobiliaria");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 220, 20));
+
+        jLabel2.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+        jLabel2.setText("Ingrese Cuantos Metros Cuadrados Comprara");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, -1));
+
+        txtMetros.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jPanel1.add(txtMetros, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 70, 240, -1));
+
+        cmdHacer.setBackground(new java.awt.Color(0, 0, 0));
+        cmdHacer.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        cmdHacer.setForeground(new java.awt.Color(255, 255, 255));
+        cmdHacer.setText("OK");
+        cmdHacer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdHacerActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cmdHacer, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 100, -1, -1));
+
+        cmdCuotas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cuota 1", "Cuota 2", "Cuota 3", "Cuota 4", "Cuota 5", "Cuota 6", "Cuota 7", "Cuota 8", "Cuota 9", "Cuota 10", "Cuota 11", "Cuota 12" }));
+        jPanel1.add(cmdCuotas, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 70, -1));
+
+        txtCuotas.setEditable(false);
+        jPanel1.add(txtCuotas, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 230, 150, -1));
+
+        jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel3.setText("Que Cuota Desea Ver ");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, -1, -1));
+
+        jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel4.setText("Su Monto Total Es De");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, -1, -1));
+        jPanel1.add(txtMontoTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, 170, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 411, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 354, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void cmdHacerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdHacerActionPerformed
+        String cuotaini,montoT;
+        int total,metros,primecuota,cuotas;
+        metros=Integer.parseInt(txtMetros.getText());
+        total=80000*metros;
+        primecuota=(total*35)/100;
+        cuotas=((total*65)/100)/12;
+        montoT=String.valueOf(total);
+     txtMontoTotal.setText(montoT);
+        
+        
+    }//GEN-LAST:event_cmdHacerActionPerformed
 
     /**
      * @param args the command line arguments
@@ -79,5 +143,15 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> cmdCuotas;
+    private javax.swing.JButton cmdHacer;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField txtCuotas;
+    private javax.swing.JTextField txtMetros;
+    private javax.swing.JTextField txtMontoTotal;
     // End of variables declaration//GEN-END:variables
 }
