@@ -41,6 +41,7 @@ public class Principal extends javax.swing.JFrame {
         txtCuota2 = new javax.swing.JTextField();
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
+        cmbNuevo = new javax.swing.JButton();
 
         jTextField6.setText("jTextField6");
 
@@ -97,6 +98,15 @@ public class Principal extends javax.swing.JFrame {
         jLabel21.setText("Cuota Inicial");
         jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, -1, -1));
 
+        cmbNuevo.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        cmbNuevo.setText("Borrar");
+        cmbNuevo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbNuevoActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cmbNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 260, -1, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -147,6 +157,16 @@ public class Principal extends javax.swing.JFrame {
               evt.consume();}
     }//GEN-LAST:event_txtMetrosKeyTyped
 
+    private void cmbNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbNuevoActionPerformed
+        txtCuota2.setText("");
+     txtCuotaIn.setText("");
+     txtMetros.setText("");
+     txtMontoTotal.setText("");
+     
+     
+     txtMetros.requestFocusInWindow();
+    }//GEN-LAST:event_cmbNuevoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -184,6 +204,7 @@ public class Principal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton cmbHacer;
+    private javax.swing.JButton cmbNuevo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
